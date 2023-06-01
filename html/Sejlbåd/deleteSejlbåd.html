@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Side for skabelse af båd</title>
+
+</head>
+<body>
+
+<header>
+    <div>
+        <p>Header</p>
+    </div>
+    <div>
+        <p>
+            <a href="sejlbådside.html">Skab Båd</a>
+        </p>
+        <p>
+            <a href="deleteSejlbåd.html">Slet Båd</a>
+        </p>
+    </div>
+</header>
+
+<h1>Sejlbåd Form</h1>
+<form id="sejlbådForm">
+
+    <label for="inpBådnavn">Bådnavn</label>
+    <input type="text" name="navn" id="inpBådnavn">
+
+    <br>
+    <br>
+
+    <label for="bådtype">Bådtype:</label>
+    <select id="bådtype" name="bådtype">
+        <option value="Længere end 40fod">Længere end 40fod</option>
+        <option value="Mellem 25-40fod">Mellem 25-40fod</option>
+        <option value="Mindre end 25fod">Mindre end 25fod</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script src="../../js/sejlbådForm.js"></script>
+</body>
+</html>

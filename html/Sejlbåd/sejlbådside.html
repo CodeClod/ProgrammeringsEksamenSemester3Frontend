@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Side for skabelse af båd</title>
+    <link rel="stylesheet" href="../../css/sejlbådcss.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h5>Administrering af både</h5>
+        </div>
+        <div>
+            <p>
+                <a href="sejlbådside.html">Skab Båd</a>
+            </p>
+        </div>
+    </header>
+
+    <h1>Tilføj ny båd</h1>
+    <form id="sejlbådForm">
+
+        <label for="inpBådnavn">Bådnavn</label>
+        <input type="text" name="navn" id="inpBådnavn">
+
+        <br><br>
+
+        <label for="bådtype">Bådtype:</label>
+        <select id="bådtype" name="bådtype">
+            <option value="Længere end 40fod">Længere end 40fod</option>
+            <option value="Mellem 25-40fod">Mellem 25-40fod</option>
+            <option value="Mindre end 25fod">Mindre end 25fod</option>
+        </select>
+
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+    <hr>
+
+
+    <h1>Sejlbåde:</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Navn</th>
+            <th>Bådtype</th>
+            <th>Opdater båd</th>
+            <th>Slet båd</th>
+        </tr>
+        </thead>
+        <tbody id="bådTable">
+
+        </tbody>
+    </table>
+
+
+    <script src="../../js/fetchAny.js"></script>
+    <script src="../../js/sejlbådForm.js"></script>
+
+</body>
+
+
+</html>
