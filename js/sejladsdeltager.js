@@ -15,7 +15,7 @@ async function handleFormSubmit(event) {
     //Vi handler submit her, i stedet for default html behaviour
     event.preventDefault();
     const form = event.currentTarget;
-    const url = form.action;
+    const url = urlCreateKapsejladsDeltager;
     console.log(form)
     console.log(url)
     //console.log(form === formKommune)
@@ -24,11 +24,10 @@ async function handleFormSubmit(event) {
         console.log(formData)
         const responseData = await postFormData(url, formData)
 
-        // når vi har oprettet sognet
         alert(formData.get('navn') + ' er oprettet');
 
         const homeUrl = "/index";
-        window.location.replace(homeUrl); //man kan ikke gøre det her indeni en submit button
+        window.location.replace(homeUrl);
         //window.location.href = homeUrl;
 
 
@@ -36,6 +35,29 @@ async function handleFormSubmit(event) {
         alert(error.message)
         console.log(error)
     }
+}
+
+async function postFormData(url, formData) {
+    const plainFormData = Object.fromEntries(formData.entries())
+    const currentlySelectedBoat = sejlbådSelect.selectedIndex;
+    const linje = sejlbådSelect[currentlySelectedBoat]
+    plainFormData.sejlbåd = linje.value
+    console.log(plainFormData)
+    const formDataJsonString = JSON.stringify(plainFormData)
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: formDataJsonString
+    }
+    const response = await fetch(url, fetchOptions)
+
+    if (!response.ok) {
+        const errorMessage = await response.text()
+        throw new Error(errorMessage)
+    }
+    return response.json();
 
 }
 

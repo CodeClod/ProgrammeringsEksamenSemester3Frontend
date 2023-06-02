@@ -8,10 +8,11 @@ async function fetchBoats() {
 }
 
 function fillBoatSelect(boat) {
-    const el = document.createElement("option")
-    el.textContent = boat.navn
-    el.value = boat // role.roleId
-    sejlbådSelect.appendChild(el)
+    const el = document.createElement("option");
+    el.textContent = boat.navn;
+    el.value = boat.sejlbådId; // Set the sejlbådId as the value
+    el.dataset.boat = JSON.stringify(boat); // Store the boat object as a data attribute
+    sejlbådSelect.appendChild(el);
 }
 
 
