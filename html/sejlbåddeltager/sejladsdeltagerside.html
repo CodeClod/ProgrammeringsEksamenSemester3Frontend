@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Side for administration af sejladsdeltagning</title>
+</head>
+<body>
+
+<header>
+    <div>
+        <h2>Administrering af både</h2>
+    </div>
+    <div>
+        <p>
+            <a href="sejlbådside.html">Båd-side</a>
+        </p>
+    </div>
+</header>
+
+<h1>Kapsejlads Deltager</h1>
+
+<div class="container">
+    <form id="kapsejladsDeltagerForm">
+        <label for="kapsejladsSelect">Kapsejlads</label>
+        <select id="kapsejladsSelect"></select>
+
+        <label for="sejlbådSelect">Sejlbåd</label>
+        <select id="sejlbådSelect"></select>
+
+        <label for="points">Points:</label>
+        <input type="number" id="points">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+<script src="../../js/fetchAny.js"></script>
+<script src="../../js/fetchBoats.js"></script>
+<script src="../../js/kapsejladsFetch.js"></script>
+<script src="../../js/sejladsdeltager.js"></script>
+
+
+</body>
+</html>

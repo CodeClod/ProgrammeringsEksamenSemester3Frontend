@@ -2,16 +2,14 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding:0 20px;
-
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    background-color: #f1f1f1;
+    padding: 10px 20px;
+    background-color: lightblue;
     margin-bottom: 20px;
 
 }
@@ -20,8 +18,17 @@ header div {
     padding: 0 10px;
 }
 
+main {
+    padding:0 240px;
+
+}
+
 h1 {
     margin-bottom: 20px;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
 }
 
 form {

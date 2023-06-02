@@ -173,6 +173,7 @@ async function fetchBoats() {
     lstBoats.forEach(createBoatTable);
 }
 
+
 function printBoat(boatid, boat) {
     console.log(boatid)
     console.log(boat)
