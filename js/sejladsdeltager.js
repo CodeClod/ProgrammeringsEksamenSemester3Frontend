@@ -18,18 +18,13 @@ async function handleFormSubmit(event) {
     const url = urlCreateKapsejladsDeltager;
     console.log(form)
     console.log(url)
-    //console.log(form === formKommune)
+
     try {
         const formData = new FormData(form)
         console.log(formData)
         const responseData = await postFormData(url, formData)
-
-        alert(formData.get('navn') + ' er oprettet');
-
-        const homeUrl = "/index";
-        window.location.replace(homeUrl);
-        //window.location.href = homeUrl;
-
+        console.log(responseData);
+        alert("Sejlbåd tilføjet til kapsejlads");
 
     } catch (error) {
         alert(error.message)
@@ -58,7 +53,6 @@ async function postFormData(url, formData) {
         throw new Error(errorMessage)
     }
     return response.json();
-
 }
 
 function convertFormDataToJson(formData) {
