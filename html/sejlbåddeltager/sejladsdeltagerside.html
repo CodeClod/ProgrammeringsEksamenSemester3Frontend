@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Side for administration af sejladsdeltagning</title>
+
+    <link rel="stylesheet" href="../../css/sejlbådcss.css">
+    <style>
+        container {
+            margin: 100px 0px;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,30 +19,53 @@
     </div>
     <div>
         <p>
-            <a href="sejlbådside.html">Båd-side</a>
+            <a href="../Sejlbåd/sejlbådside.html">Båd-side</a>
+        </p>
+    </div>
+    <div>
+        <p>
+            <a href="../sejlbåddeltager/sejladsdeltagerside.html">Kapsejlads-Side</a>
         </p>
     </div>
 </header>
 
 <h1>Kapsejlads Deltager</h1>
 
-<div class="container">
+<main class="container">
     <form id="kapsejladsDeltagerForm" method="post">
         <label for="kapsejladsSelect">Kapsejlads</label>
         <select id="kapsejladsSelect" name="kapsejlads"></select>
-
+        <br>
         <label for="sejlbådSelect">Sejlbåd</label>
         <select id="sejlbådSelect" name="sejlbåd"></select>
-
+        <br>
         <label for="points">Points:</label>
         <input type="number" id="points" name="points">
-
+        <br>
         <label for="placering">Placering:</label>
         <input type="number" id="placering" name="placering">
-
+        <br>
+        <br>
         <input type="submit" value="Submit">
     </form>
-</div>
+    <hr>
+
+    <h2>Liste over Deltagere i kapsejlads</h2>
+    <label for="kapsejladsTableSelect">Vælg Kapsejlads:</label>
+    <select id="kapsejladsTableSelect" onchange="loadKapsejladsDeltagers()">
+
+    </select>
+    <br><br>
+    <table id="kapsejladsDeltagerTable">
+        <tr>
+            <th>Navn</th>
+            <th>Points</th>
+            <th>Placering</th>
+        </tr>
+    </table>
+</main>
+
+
 
 
 <script src="../../js/fetchAny.js"></script>
